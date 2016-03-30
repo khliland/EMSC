@@ -1,0 +1,16 @@
+Package: EMSC
+Type: Package
+Title: Extended Multiplicative Signal Correction
+Version: 0.7
+Date: 2016-03-30
+Author: Kristian Hovde Liland
+Maintainer: Kristian Hovde Liland <kristian.liland@nofima.no>
+Description: Background correction of spectral like data. EMSC handles variations in
+  scaling, polynomial baselines and interferents. Parameters for corrections are stored
+  for further analysis, and spectra are corrected accordingly.
+License: GPL-2
+LazyData: TRUE
+Depends: R (>= 2.10)
+Imports:
+    pracma
+RoxygenNote: 5.0.1
