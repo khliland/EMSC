@@ -19,7 +19,7 @@
 #'  \item{\code{model}:}{ object containing input all input parameters.}
 #' }
 #'
-#' @seealso \code{\link{EMSC_model}}
+#' @seealso \code{\link{EMSC_model}} \code{\link{predict.EMSC}}
 #' @references H. Martens, E. Stark, Extended multiplicative signal correction and spectral
 #'  interference subtraction: new preprocessing methods for near infrared spectroscopy.
 #'  J Pharm Biomed Anal. 1991; 9(8):625-35.
@@ -119,7 +119,7 @@ EMSC <- function(X, model = NULL, ...){
 #'
 #' @return An EMSC model is returned containing all parameters.
 #'
-#' @seealso \code{\link{EMSC}}
+#' @seealso \code{\link{EMSC}} \code{\link{predict.EMSC}}
 #' @export
 EMSC_model <- function(x, reference = NA, degree = 2,
                        interferent = NULL, constituent = NULL, weights = NULL, rep_corr = NULL){
@@ -187,4 +187,36 @@ EMSC_model <- function(x, reference = NA, degree = 2,
 
   # Return
   list(model = model, abcissas = abcissas, sizes = c(p, degree, n.i, n.c), weights = weights)
+}
+
+
+#' Predict Method for EMSC
+#' 
+#' Prediction for \code{EMSC} ojects. Corrections are calculated for the new
+#' \code{matrix} based on the EMSC model used in the input object.
+#' 
+#' @param object An object fitted by the \code{EMSC} function.
+#' @param newdata A \code{matrix} or object convertable to a matrix containing observations as rows.
+#' 
+#' @seealso \code{\link{EMSC}} \code{\link{EMSC_model}}
+#' 
+#' @examples
+#' data(milk)
+#' Raman.cal <- milk$Raman[  1:90,  850:3300]
+#' Raman.val <- milk$Raman[-(1:90), 850:3300]
+#' EMSC.cal  <- EMSC(Raman.cal)
+#' EMSC.val  <- predict(EMSC.cal, Raman.val)
+#' identical(EMSC.cal$model, EMSC.val$model) # Same model, reference spectrum, etc.
+#' 
+#' matplot(t(EMSC.cal$corrected), type = 'l', col = 'black', lty = 1, ylab = 'Intensity')
+#' matplot(t(EMSC.val$corrected), type = 'l', col = 'red', lty = 2, add = TRUE)
+#' legend('topleft', legend = c('Calibration','Validation'), lty = 1:2, col = 1:2)
+#' 
+#' @export
+predict.EMSC <- function(object, newdata = NULL){
+  if(is.null(newdata))
+    return(object)
+  
+  newdata <- unclass(as.matrix(newdata))
+  EMSC(newdata, object$model)
 }

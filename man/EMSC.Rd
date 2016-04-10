@@ -59,6 +59,6 @@ H. Martens, E. Stark, Extended multiplicative signal correction and spectral
  J Pharm Biomed Anal. 1991; 9(8):625-35.
 }
 \seealso{
-\code{\link{EMSC_model}}
+\code{\link{EMSC_model}} \code{\link{predict.EMSC}}
 }
 
