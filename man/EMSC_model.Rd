@@ -5,11 +5,11 @@
 \title{Model object for extended multiplicative signal correction (EMSC)}
 \usage{
 EMSC_model(x, reference = NA, degree = 2, interferent = NULL,
-  constituent = NULL, weights = NULL, rep_corr = NULL)
+  constituent = NULL, weights = NULL, replicates = NULL, rep_corr = 0.9)
 }
 \arguments{
-\item{x}{\code{numeric} vector containing abcissas of spectra to be corrected, reference spectrum
-with/without names or matrix to be corrected.}
+\item{x}{\code{numeric} vector containing abcissas of spectra to be corrected or matrix to be 
+corrected with/without names colnames.}
 
 \item{reference}{\code{numeric} vector containing the reference spectrum.}
 
@@ -21,7 +21,10 @@ with/without names or matrix to be corrected.}
 
 \item{weights}{\code{numeric} vector of abcissas weights.}
 
-\item{rep_corr}{proportion of variance or number of subspace components in replicate space (not implemented yet).}
+\item{replicates}{optional \code{vector} which identifies replicates. Default = NULL, 
+meaning no replicate correctio will be performed.}
+
+\item{rep_corr}{proportion of variance or number of subspace components in replicate space (default = 0.9).}
 }
 \value{
 An EMSC model is returned containing all parameters.

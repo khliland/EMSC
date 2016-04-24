@@ -19,6 +19,7 @@ An object of class EMSC is returned. This contains:
  \item{\code{corrected}:}{ \code{matrix} of corrected spectra.}
  \item{\code{parameters}:}{ \code{matrix} of fitted parameter values.}
  \item{\code{model}:}{ object containing input all input parameters.}
+ \item{\code{X}:}{ original data.}
 }
 }
 \description{
@@ -36,7 +37,8 @@ data(milk)
 Raman      <- milk$Raman[, 850:3300]
 EMSC.basic <- EMSC(Raman)
 EMSC.poly6 <- EMSC(Raman, degree = 6)
-EMSC.ref   <- EMSC(Raman, degree = 6, reference = Raman[30, ])
+EMSC.rep   <- EMSC(Raman, degree = 6, reference = Raman[30, ],
+                   replicates = milk$replicates)
 
 \dontrun{
 old.par  <- par(mfrow = c(2,2), mar = c(4,4,1,1))
@@ -47,8 +49,9 @@ matplot(colnames(Raman), t(EMSC.basic$corrected), type = 'l', xlim = xlim,
         ylab = 'Relative intensity', xlab = 'Corrected (basic)')
 matplot(colnames(Raman), t(EMSC.poly6$corrected), type = 'l', xlim = xlim,
         ylab = 'Relative intensity', xlab = 'Corrected (6th degree polynomial)')
-matplot(colnames(Raman), t(EMSC.ref$corrected),   type = 'l', xlim = xlim,
-        ylab = 'Relative intensity', xlab = 'Corrected (reference = spec. #30)')
+matplot(colnames(Raman), t(EMSC.rep$corrected),   type = 'l', xlim = xlim,
+        ylab = 'Relative intensity', 
+        xlab = 'Corrected (reference = spec. #30, replicate correction (90\%))')
 par(old.par)
 }
 
