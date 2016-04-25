@@ -86,6 +86,6 @@ plot(EMSC.rep)
 Kristian Hovde Liland
 }
 \seealso{
-\code{\link{EMSC}} \code{\link{EMSC_model}}
+\code{\link{EMSC}} \code{\link{EMSC_model}} \code{\link{plot.EMSC}}
 }
 

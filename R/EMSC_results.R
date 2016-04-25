@@ -22,6 +22,7 @@
 #' legend('topleft', legend = c('Calibration','Validation'), lty = 1:2, col = 1:2)
 #' 
 #' @importFrom stats predict
+#' @importFrom graphics axTicks matplot
 #' @export
 predict.EMSC <- function(object, newdata = NULL, ...){
   if(is.null(newdata))
