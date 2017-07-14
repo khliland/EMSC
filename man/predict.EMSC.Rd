@@ -18,9 +18,9 @@ Prediction for \code{EMSC} ojects. Corrections are calculated for the new
 \code{matrix} based on the EMSC model used in the input object.
 }
 \examples{
-data(milk)
-Raman.cal <- milk$Raman[  1:90,  850:3300]
-Raman.val <- milk$Raman[-(1:90), 850:3300]
+data(fishoil)
+Raman.cal <- fishoil$Raman[  1:90,  850:3300]
+Raman.val <- fishoil$Raman[-(1:90), 850:3300]
 EMSC.cal  <- EMSC(Raman.cal)
 EMSC.val  <- predict(EMSC.cal, Raman.val)
 identical(EMSC.cal$model, EMSC.val$model) # Same model, reference spectrum, etc.
@@ -33,4 +33,3 @@ legend('topleft', legend = c('Calibration','Validation'), lty = 1:2, col = 1:2)
 \seealso{
 \code{\link{EMSC}} \code{\link{EMSC_model}}
 }
-

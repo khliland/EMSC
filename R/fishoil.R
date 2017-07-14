@@ -1,7 +1,7 @@
-#' @name milk
-#' @title Raman spectra of milk (wrong specification, kept for backward compatibility)
+#' @name fishoil
+#' @title Raman spectra of fish oil
 #'
-#' @description 42 milk (should be fish oil) samples with 3 replicates each constitute a Raman data set of 126
+#' @description 42 fish oil samples with 3 replicates each constitute a Raman data set of 126
 #' samples over 3471 Raman shifts. There is a large fluorescence signal in the spectra that
 #' needs to be removed before any data analysis can be performed.
 #'
@@ -9,7 +9,7 @@
 #'  spectroscopy of biological samples. Journal of Raman Spectroscopy (2016).
 #'
 #' @docType data
-#' @usage data(milk)
+#' @usage data(fishoil)
 #' @format A \code{data.frame} consisting of three parts. The estimated Iodine concentrations
-#' of the milk samples, Raman spectra (\code{matrix}) and a replicate vector.
+#' of the fish oil samples, Raman spectra (\code{matrix}) and a replicate vector.
 NULL

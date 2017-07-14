@@ -30,4 +30,3 @@ rescaled afterwards. This can be overridden using the \code{re} paramter.
 \seealso{
 \code{\link{EMSC}} \code{\link{EMSC_model}}  \code{\link{plot.EMSC}}
 }
-

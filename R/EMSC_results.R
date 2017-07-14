@@ -10,9 +10,9 @@
 #' @seealso \code{\link{EMSC}} \code{\link{EMSC_model}}
 #' 
 #' @examples
-#' data(milk)
-#' Raman.cal <- milk$Raman[  1:90,  850:3300]
-#' Raman.val <- milk$Raman[-(1:90), 850:3300]
+#' data(fishoil)
+#' Raman.cal <- fishoil$Raman[  1:90,  850:3300]
+#' Raman.val <- fishoil$Raman[-(1:90), 850:3300]
 #' EMSC.cal  <- EMSC(Raman.cal)
 #' EMSC.val  <- predict(EMSC.cal, Raman.val)
 #' identical(EMSC.cal$model, EMSC.val$model) # Same model, reference spectrum, etc.
@@ -78,10 +78,10 @@ predict.EMSC <- function(object, newdata = NULL, ...){
 #' @seealso \code{\link{EMSC}} \code{\link{EMSC_model}} \code{\link{plot.EMSC}}
 #' 
 #' @examples
-#' data(milk, package = "EMSC")
-#' Raman      <- milk$Raman[, 850:3300]
+#' data(fishoil, package = "EMSC")
+#' Raman      <- fishoil$Raman[, 850:3300]
 #' EMSC.rep   <- EMSC(Raman, degree = 6, reference = Raman[30, ],
-#'                    replicates = milk$replicates)
+#'                    replicates = fishoil$replicates)
 #' plot(EMSC.rep)
 #'                    
 #' @importFrom graphics axis box grid lines par plot points polygon text
@@ -115,7 +115,7 @@ plot.EMSC <- function(x, y, spec = "all",
   if (missing(xlab)) 
     xlab <- "variable"
   if (missing(ylab)) 
-    ylab <- "Relativ intensity"
+    ylab <- "Relative intensity"
   if(missing(labels)){
     xaxt <- par("xaxt")
     # xl <- 1:x$model$sizes[1]

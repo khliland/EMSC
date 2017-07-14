@@ -33,12 +33,12 @@ no parameters (defaults are used), with a predefined EMSC model object or with
 parameters that are passed on to the EMSC model building function \code{\link{EMSC_model}}.
 }
 \examples{
-data(milk)
-Raman      <- milk$Raman[, 850:3300]
+data(fishoil)
+Raman      <- fishoil$Raman[, 850:3300]
 EMSC.basic <- EMSC(Raman)
 EMSC.poly6 <- EMSC(Raman, degree = 6)
 EMSC.rep   <- EMSC(Raman, degree = 6, reference = Raman[30, ],
-                   replicates = milk$replicates)
+                   replicates = fishoil$replicates)
 
 \dontrun{
 old.par  <- par(mfrow = c(2,2), mar = c(4,4,1,1))
@@ -64,4 +64,3 @@ H. Martens, E. Stark, Extended multiplicative signal correction and spectral
 \seealso{
 \code{\link{EMSC_model}} \code{\link{predict.EMSC}} \code{\link{plot.EMSC}}
 }
-

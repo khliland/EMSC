@@ -35,4 +35,3 @@ Sets up an EMSC model to be applied to one or more set of spectra.
 \seealso{
 \code{\link{EMSC}} \code{\link{predict.EMSC}} \code{\link{plot.EMSC}}
 }
-

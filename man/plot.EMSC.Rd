@@ -4,6 +4,8 @@
 \alias{plot.EMSC}
 \alias{print.EMSC}
 \alias{summary.EMSC}
+\alias{print.EMSC}
+\alias{summary.EMSC}
 \title{Plot, print and summary methods for EMSC}
 \usage{
 \method{plot}{EMSC}(x, y, spec = "all", what = c("raw", "reference",
@@ -75,17 +77,16 @@ There are limits to the freedom of this function.
 EMSC object.
 }
 \examples{
-data(milk, package = "EMSC")
-Raman      <- milk$Raman[, 850:3300]
+data(fishoil, package = "EMSC")
+Raman      <- fishoil$Raman[, 850:3300]
 EMSC.rep   <- EMSC(Raman, degree = 6, reference = Raman[30, ],
-                   replicates = milk$replicates)
+                   replicates = fishoil$replicates)
 plot(EMSC.rep)
                    
-}
-\author{
-Kristian Hovde Liland
 }
 \seealso{
 \code{\link{EMSC}} \code{\link{EMSC_model}} \code{\link{plot.EMSC}}
 }
-
+\author{
+Kristian Hovde Liland
+}
