@@ -14,7 +14,7 @@ LaTeX: pdfLaTeX
 
 BuildType: Package
 PackageUseDevtools: Yes
-PackagePath: H:/Documents/GitHub/EMSC
+PackagePath: Z:/Documents/GitHub/EMSC
 PackageInstallArgs: --no-multiarch --with-keep.source
 PackageCheckArgs: --library=C:/R/Library --as-cran
 PackageRoxygenize: rd,collate,namespace

@@ -55,9 +55,8 @@ EMSC <- function(X, model = NULL, ...){
   n <- dim(X)[1]
 
   # Strip X
-  X <- as.matrix(X)
-  X <- unclass(X)
-  
+  X <- unclass(as.matrix(X))
+
   # Make EMSC model if not supplied
   if(is.null(model)){
     mf <- match.call(expand.dots = TRUE)

@@ -1,8 +1,8 @@
 Package: EMSC
 Type: Package
 Title: Extended Multiplicative Signal Correction
-Version: 0.8.2
-Date: 2017-07-14
+Version: 0.9.0
+Date: 2017-12-15
 Author: Kristian Hovde Liland
 Maintainer: Kristian Hovde Liland <kristian.liland@nmbu.no>
 Description: Background correction of spectral like data. Handles variations in
