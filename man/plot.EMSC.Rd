@@ -4,15 +4,29 @@
 \alias{plot.EMSC}
 \alias{print.EMSC}
 \alias{summary.EMSC}
-\alias{print.EMSC}
-\alias{summary.EMSC}
 \title{Plot, print and summary methods for EMSC}
 \usage{
-\method{plot}{EMSC}(x, y, spec = "all", what = c("raw", "reference",
-  "polynomials", "interferents", "constituents", "replicates", "corrected"),
-  where = c(1, 1, 2, 3, 3, 4, 5), revX = FALSE, labels, type, lty,
-  lwd = NULL, pch, cex = NULL, col, xlab, ylab, pretty.xlabels = TRUE,
-  xlim, ...)
+\method{plot}{EMSC}(
+  x,
+  y,
+  spec = "all",
+  what = c("raw", "reference", "polynomials", "interferents", "constituents",
+    "replicates", "corrected"),
+  where = c(1, 1, 2, 3, 3, 4, 5),
+  revX = FALSE,
+  labels,
+  type,
+  lty,
+  lwd = NULL,
+  pch,
+  cex = NULL,
+  col,
+  xlab,
+  ylab,
+  pretty.xlabels = TRUE,
+  xlim,
+  ...
+)
 
 \method{print}{EMSC}(x, ...)
 

@@ -1,0 +1,5 @@
+NEWS file for package EMSC
+
+##### Version 0.9.2
+Date: 18 June 2020
+>> Changed handling of ends of spectra in SavitzkyGolay. Use parameter ends="zeros" for legacy (silly) version.

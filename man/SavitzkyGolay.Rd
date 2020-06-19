@@ -4,7 +4,13 @@
 \alias{SavitzkyGolay}
 \title{Savitzky-Golay filtering and derivatives}
 \usage{
-SavitzkyGolay(X, poly = 3, width = 11, deriv = 2)
+SavitzkyGolay(
+  X,
+  poly = 3,
+  width = 11,
+  deriv = 2,
+  ends = c("cut", "extrapolate", "zeros")
+)
 }
 \arguments{
 \item{X}{\code{matrix} containing spectra as rows.}
@@ -14,6 +20,8 @@ SavitzkyGolay(X, poly = 3, width = 11, deriv = 2)
 \item{width}{Window width of smoother, default = 11, must be an odd number.}
 
 \item{deriv}{Derivative degree, can be 0, default = 2.}
+
+\item{ends}{Handling of spectrum ends, i.e. first and last (width-1)/2 points. Default is "cut", i.e. remove ends, "extrapolate" copies the first/last estimable point, while "zeros" is included for backward compatilibity (fill with 0).}
 }
 \value{
 A matrix of filtered spectra (possibly with derivatives)
@@ -28,7 +36,7 @@ SavGol   <- SavitzkyGolay(Raman)
 old.par  <- par(mfrow = c(2,1), mar = c(4,4,1,1))
 matplot(colnames(Raman), t(Raman), type = 'l',
         ylab = 'Relative intensity', xlab = 'Raw spectra')
-matplot(colnames(Raman), t(SavGol), type = 'l',
+matplot(colnames(SavGol), t(SavGol), type = 'l',
         ylab = 'Relative intensity', xlab = 'Smoothed 2nd derivative')
 par(old.par)
 }

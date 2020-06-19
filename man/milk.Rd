@@ -4,8 +4,10 @@
 \name{milk}
 \alias{milk}
 \title{Raman spectra of milk (wrong specification, kept for backward compatibility)}
-\format{A \code{data.frame} consisting of three parts. The estimated Iodine concentrations
-of the milk samples, Raman spectra (\code{matrix}) and a replicate vector.}
+\format{
+A \code{data.frame} consisting of three parts. The estimated Iodine concentrations
+of the milk samples, Raman spectra (\code{matrix}) and a replicate vector.
+}
 \usage{
 data(milk)
 }

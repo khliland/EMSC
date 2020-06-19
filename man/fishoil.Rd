@@ -4,8 +4,10 @@
 \name{fishoil}
 \alias{fishoil}
 \title{Raman spectra of fish oil}
-\format{A \code{data.frame} consisting of three parts. The estimated Iodine concentrations
-of the fish oil samples, Raman spectra (\code{matrix}) and a replicate vector.}
+\format{
+A \code{data.frame} consisting of three parts. The estimated Iodine concentrations
+of the fish oil samples, Raman spectra (\code{matrix}) and a replicate vector.
+}
 \usage{
 data(fishoil)
 }

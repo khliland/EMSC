@@ -60,6 +60,10 @@ par(old.par)
 H. Martens, E. Stark, Extended multiplicative signal correction and spectral
  interference subtraction: new preprocessing methods for near infrared spectroscopy.
  J Pharm Biomed Anal. 1991; 9(8):625-35.
+
+Joakim Skogholt, Kristian Hovde Liland, Ulf Geir Indahl,
+ Pre-processing of spectral data in the extended multiplicative signal correction framework using multiple reference spectra
+ Journal of Raman Spectroscopy 50(3), (2019), pp. 407-417.
 }
 \seealso{
 \code{\link{EMSC_model}} \code{\link{predict.EMSC}} \code{\link{plot.EMSC}}
