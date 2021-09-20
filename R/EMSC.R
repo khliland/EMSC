@@ -37,7 +37,6 @@
 #' EMSC.rep   <- EMSC(Raman, degree = 6, reference = Raman[30, ],
 #'                    replicates = fishoil$replicates)
 #'
-#' \dontrun{
 #' old.par  <- par(mfrow = c(2,2), mar = c(4,4,1,1))
 #' xlim     <- rev(as.numeric(range(colnames(Raman))))
 #' matplot(colnames(Raman), t(Raman), type = 'l', xlim = xlim,
@@ -50,7 +49,6 @@
 #'         ylab = 'Relative intensity', 
 #'         xlab = 'Corrected (reference = spec. #30, replicate correction (90%))')
 #' par(old.par)
-#' }
 #'
 #' @importFrom pracma mldivide
 #' @export
@@ -141,13 +139,15 @@ EMSC_model <- function(x, reference = NA, degree = 2,
   if(is.data.frame(x))
     x <- as.matrix(x)
   if(is.matrix(x)){
-    if(!is.ordered(abcissas <- colnames(x))){
+    abcissas <- colnames(x)
+    if(is.null(abcissas) || length(abcissas)==0 || !is.ordered(as.numeric(abcissas))){
       abcissas <- 1:dim(x)[2]
     }
     if(length(reference) == 1 && is.na(reference))
       reference <- colMeans(x)
   } else {
-    if(!is.ordered(abcissas <- names(x))){
+    abcissas <- names(x)
+    if(is.null(abcissas) || length(abcissas)==0 || !is.ordered(as.numeric(abcissas))){
       if(!is.ordered(abcissas <- x)){
         abcissas <- 1:length(x)
       }

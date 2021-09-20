@@ -40,7 +40,6 @@ EMSC.poly6 <- EMSC(Raman, degree = 6)
 EMSC.rep   <- EMSC(Raman, degree = 6, reference = Raman[30, ],
                    replicates = fishoil$replicates)
 
-\dontrun{
 old.par  <- par(mfrow = c(2,2), mar = c(4,4,1,1))
 xlim     <- rev(as.numeric(range(colnames(Raman))))
 matplot(colnames(Raman), t(Raman), type = 'l', xlim = xlim,
@@ -53,7 +52,6 @@ matplot(colnames(Raman), t(EMSC.rep$corrected),   type = 'l', xlim = xlim,
         ylab = 'Relative intensity', 
         xlab = 'Corrected (reference = spec. #30, replicate correction (90\%))')
 par(old.par)
-}
 
 }
 \references{
