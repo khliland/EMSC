@@ -1,5 +1,9 @@
 NEWS file for package EMSC
 
+##### Version 0.9.4
+Date: 05 February 2024
+>> Fixed bug when using argument 'weights'.
+
 ##### Version 0.9.3
 Date: 20 September 2021
 >> Improved handling of character column names for inputs.

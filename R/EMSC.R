@@ -73,7 +73,7 @@ EMSC <- function(X, model = NULL, ...){
   # Apply weights (if included)
   if(!is.null(model$weights)){
     Xw     <- X * rep(model$weights, each = n)
-    modelw <- model$model * rep(model$weights, each = n)
+    modelw <- model$model * rep(model$weights, each = nrow(model$model))
   } else {
     Xw     <- X
     modelw <- model$model
