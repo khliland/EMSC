@@ -14,10 +14,10 @@
 #'
 #' @return An object of class EMSC is returned. This contains:
 #' \itemize{
-#'  \item{\code{corrected}:}{ \code{matrix} of corrected spectra.}
-#'  \item{\code{parameters}:}{ \code{matrix} of fitted parameter values.}
-#'  \item{\code{model}:}{ object containing input all input parameters.}
-#'  \item{\code{X}:}{ original data.}
+#'  \item \code{corrected}: \code{matrix} of corrected spectra.
+#'  \item \code{parameters}: \code{matrix} of fitted parameter values.
+#'  \item \code{model}: object containing input all input parameters.
+#'  \item \code{X}: original data.
 #' }
 #'
 #' @seealso \code{\link{EMSC_model}} \code{\link{predict.EMSC}} \code{\link{plot.EMSC}}
